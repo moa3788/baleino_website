@@ -1,0 +1,21 @@
+{# app/Resources/views/campaigns/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% set activeTab = "campaigns" %}
+
+{% block title %}Vos campagnes{% endblock %}
+
+{% block toolbar %}
+<div class="form-group" >
+	<a class="btn btn-primary" style="margin-top: 5px; margin-right: 35px;" 
+	id="add-campaign-opener" data-command=popup data-command_popup_url="/campaigns/add"><span class="glyphicon glyphicon-plus"></span> Ajouter une campagne</a>
+</div>
+{% endblock %}
+
+{% block body %}
+	<div id="dialog-add-campaign" title="Ajouter une campagne">
+	{{ render(controller(
+        'AppBundle:Campaigns:Add'
+    )) }}
+	</div>
+{% endblock %}
